@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1018275013948",
+    "project_id": "listly-ef975",
+    "storage_bucket": "listly-ef975.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018275013948:android:d157a2139870895b57ea39",
+        "android_client_info": {
+          "package_name": "com.example.listly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018275013948-cqgs3r8ibjvbftegmam84ei5eg4src9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpedGlVEiUVkw38MSWsqAKk_Wp6sZVAIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018275013948-cqgs3r8ibjvbftegmam84ei5eg4src9v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1018275013948-jth6n6t5no4d3lrnh1lm6bm5minrki79.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.listly"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
