@@ -51,3 +51,6 @@ app.*.map.json
 
 # Claude Code configuration
 CLAUDE.md
+
+**/*.g.dart
+**/*.freezed.dart
