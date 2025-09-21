@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:uuid/uuid.dart';
-
 import 'package:listly/shared/models/list_permissions.dart';
+import 'package:uuid/uuid.dart';
 
 part 'shopping_list.freezed.dart';
 part 'shopping_list.g.dart';
@@ -20,7 +19,14 @@ abstract class ShoppingList with _$ShoppingList {
     required DateTime updatedAt,
     required DateTime lastActivityAt,
     @Default(false) bool isArchived,
-    @Default(ListPermissions(anyoneCanEdit: true, anyoneCanInvite: false, anyoneCanDelete: false)) ListPermissions permissions,
+    @Default(
+      ListPermissions(
+        anyoneCanEdit: true,
+        anyoneCanInvite: false,
+        anyoneCanDelete: false,
+      ),
+    )
+    ListPermissions permissions,
   }) = _ShoppingList;
 
   factory ShoppingList.fromJson(Map<String, dynamic> json) =>
