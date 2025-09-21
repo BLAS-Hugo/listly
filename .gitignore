@@ -48,3 +48,9 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# Claude Code configuration
+CLAUDE.md
+
+**/*.g.dart
+**/*.freezed.dart

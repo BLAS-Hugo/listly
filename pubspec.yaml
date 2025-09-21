@@ -7,18 +7,20 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
-  cloud_firestore: ^6.0.0
-  firebase_auth: ^6.0.1
-  firebase_core: ^4.0.0
-  firebase_crashlytics: ^5.0.0
-  firebase_messaging: ^16.0.0
+  cloud_firestore: ^6.0.1
+  firebase_auth: ^6.0.2
+  firebase_core: ^4.1.0
+  firebase_crashlytics: ^5.0.1
+  firebase_messaging: ^16.0.1
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
   freezed: ^3.1.0
   freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
   riverpod_annotation: ^2.6.1
   sembast: ^3.8.5+1
+  uuid: ^4.4.0
   
 
 dev_dependencies:
@@ -26,6 +28,7 @@ dev_dependencies:
   custom_lint: ^0.7.6
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.9.5
   lint: ^2.8.0
   riverpod_generator: ^2.6.5
   riverpod_lint: ^2.6.5

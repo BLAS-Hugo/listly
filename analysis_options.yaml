@@ -3,3 +3,6 @@ include: package:lint/strict.yaml
 analyzer:
   plugins:
     - custom_lint
+  errors:
+    constant_identifier_names: ignore
+    invalid_annotation_target: ignore
