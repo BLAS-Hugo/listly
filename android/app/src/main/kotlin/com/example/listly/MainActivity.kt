@@ -1,4 +1,4 @@
-package com.example.listly
+package com.hbdev.listly
 
 import io.flutter.embedding.android.FlutterActivity
 

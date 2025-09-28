@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCpedGlVEiUVkw38MSWsqAKk_Wp6sZVAIs',
-    appId: '1:1018275013948:android:d157a2139870895b57ea39',
+    appId: '1:1018275013948:android:26a72bcb6db260ab57ea39',
     messagingSenderId: '1018275013948',
     projectId: 'listly-ef975',
     storageBucket: 'listly-ef975.firebasestorage.app',
@@ -59,10 +59,13 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC1DC2u248q0f61QxDxDChEpTP_cNb6YX8',
-    appId: '1:1018275013948:ios:b792e8d83af698bb57ea39',
+    appId: '1:1018275013948:ios:9b983caf82ec31c457ea39',
     messagingSenderId: '1018275013948',
     projectId: 'listly-ef975',
     storageBucket: 'listly-ef975.firebasestorage.app',
-    iosBundleId: 'com.example.listly',
+    androidClientId: '1018275013948-7uhn9ittg30hv8oftubc18dj34gui5lh.apps.googleusercontent.com',
+    iosClientId: '1018275013948-vlr0q57alm8hqjtdm409rvjv8eqv7ast.apps.googleusercontent.com',
+    iosBundleId: 'com.hbdev.listly',
   );
+
 }
