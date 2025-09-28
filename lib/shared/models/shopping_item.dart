@@ -6,6 +6,7 @@ part 'shopping_item.g.dart';
 
 @freezed
 abstract class ShoppingItem with _$ShoppingItem {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ShoppingItem({
     required String id,
     required String listId,

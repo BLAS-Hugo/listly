@@ -281,6 +281,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  deep_pick:
+    dependency: "direct main"
+    description:
+      name: deep_pick
+      sha256: "79d96b94a9c9ca2e823f05f72ec1a4efcc5ad5fd3875f46d1a8fe61ebbd9f359"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   fake_async:
     dependency: transitive
     description:
@@ -601,7 +609,7 @@ packages:
     source: hosted
     version: "2.0.0"
   mockito:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: mockito
       sha256: "2314cbe9165bcd16106513df9cf3c3224713087f09723b128928dc11a4379f99"
@@ -918,7 +926,7 @@ packages:
     source: hosted
     version: "1.2.2"
   test:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: test
       sha256: "65e29d831719be0591f7b3b1a32a3cda258ec98c58c7b25f7b84241bc31215bb"

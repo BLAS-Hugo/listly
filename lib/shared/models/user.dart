@@ -59,8 +59,9 @@ abstract class User with _$User {
       email: firebaseUser.email!,
       firstName: nameParts.isNotEmpty ? nameParts.first : '',
       name: nameParts.length > 1 ? nameParts.last : '',
-      displayName:
-          firebaseUser.displayName ?? firebaseUser.email!.split('@').first,
+      displayName: (firebaseUser.displayName?.isNotEmpty == true)
+          ? firebaseUser.displayName!
+          : firebaseUser.email!.split('@').first,
       profileImageUrl: firebaseUser.photoURL,
     );
   }
