@@ -7,16 +7,20 @@ part 'user.g.dart';
 
 @freezed
 abstract class User with _$User {
+  @JsonSerializable(
+    explicitToJson: true,
+    fieldRename: FieldRename.snake,
+  )
   const factory User({
     required String id,
     required String name,
-    @JsonKey(name: 'first_name') required String firstName,
-    @JsonKey(name: 'display_name') required String displayName,
+    required String firstName,
+    required String displayName,
     required String email,
-    @JsonKey(name: 'profile_image_url') String? profileImageUrl,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'last_active_at') DateTime? lastActiveAt,
+    String? profileImageUrl,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    DateTime? lastActiveAt,
     @Default(UserPreferences()) UserPreferences preferences,
   }) = _User;
 

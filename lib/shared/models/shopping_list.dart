@@ -7,6 +7,7 @@ part 'shopping_list.g.dart';
 
 @freezed
 abstract class ShoppingList with _$ShoppingList {
+  @JsonSerializable(explicitToJson: true)
   const factory ShoppingList({
     required String id,
     required String creatorUserId,
