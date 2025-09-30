@@ -4,5 +4,6 @@ analyzer:
   plugins:
     - custom_lint
   errors:
+    avoid_classes_with_only_static_members: ignore
     constant_identifier_names: ignore
     invalid_annotation_target: ignore
