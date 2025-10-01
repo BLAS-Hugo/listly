@@ -49,6 +49,11 @@ class AppTheme {
       chipTheme: buildChipTheme(colorScheme, textTheme, palette),
       dividerTheme: buildDividerTheme(palette),
       iconTheme: buildIconTheme(colorScheme),
+      navigationBarTheme: buildNavigationBarTheme(
+        textTheme,
+        colorScheme,
+        palette,
+      ),
       navigationRailTheme: buildNavigationRailTheme(textTheme, palette),
       switchTheme: buildSwitchTheme(colorScheme, palette),
     );

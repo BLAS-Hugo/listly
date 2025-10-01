@@ -2,9 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:listly/app/theme/app_theme.dart';
-import 'package:listly/features/shopping_list/presentation/views/debug_screen.dart';
 import 'package:listly/firebase_options.dart';
 import 'package:listly/shared/providers/database/database_provider.dart';
+import 'package:listly/shared/providers/navigation/navigation_provider.dart';
 import 'package:listly/shared/providers/theme/theme_provider.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -33,10 +33,15 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeNotifierProvider);
+    final router = ref.watch(routerProvider);
 
     final theme = themeMode == ThemeMode.light
         ? AppTheme.light()
         : AppTheme.dark();
-    return MaterialApp(home: DebugScreen(), theme: theme, themeMode: themeMode);
+    return MaterialApp.router(
+      routerConfig: router,
+      theme: theme,
+      themeMode: themeMode,
+    );
   }
 }

@@ -4,8 +4,10 @@ AppBarTheme buildAppBarTheme(ColorScheme colorScheme, TextTheme textTheme) {
   return AppBarTheme(
     backgroundColor: colorScheme.surface,
     foregroundColor: colorScheme.onSurface,
-    elevation: 0,
-    scrolledUnderElevation: 0,
+    elevation: 1,
+    scrolledUnderElevation: 1,
+    shadowColor: const Color.fromRGBO(0, 0, 0, 0.06),
+    surfaceTintColor: Colors.transparent,
     centerTitle: false,
     titleTextStyle: textTheme.titleLarge?.copyWith(
       color: colorScheme.onSurface,
