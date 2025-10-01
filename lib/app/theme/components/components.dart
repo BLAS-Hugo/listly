@@ -5,6 +5,7 @@ export 'divider_theme.dart';
 export 'elevated_button_theme.dart';
 export 'icon_theme.dart';
 export 'input_decoration_theme.dart';
+export 'navigation_bar_theme.dart';
 export 'navigation_rail_theme.dart';
 export 'outlined_button_theme.dart';
 export 'switch_theme.dart';
