@@ -46,7 +46,8 @@ class _MainAppState extends ConsumerState<MainApp> {
         const MapLocale('en', US.en_US),
         const MapLocale('fr', FR.fr_FR),
       ],
-      initLanguageCode: 'fr',
+      initLanguageCode:
+          WidgetsBinding.instance.platformDispatcher.locale.languageCode,
     );
     appLocalization.onTranslatedLanguage = _onTranslatedLanguage;
   }
