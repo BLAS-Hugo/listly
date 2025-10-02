@@ -52,6 +52,12 @@ class _MainAppState extends ConsumerState<MainApp> {
     appLocalization.onTranslatedLanguage = _onTranslatedLanguage;
   }
 
+  @override
+  void dispose() {
+    appLocalization.onTranslatedLanguage = null;
+    super.dispose();
+  }
+
   void _onTranslatedLanguage(Locale? locale) {
     setState(() {});
   }
