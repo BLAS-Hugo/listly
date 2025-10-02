@@ -5,7 +5,7 @@ AppBarTheme buildAppBarTheme(ColorScheme colorScheme, TextTheme textTheme) {
     backgroundColor: colorScheme.surface,
     foregroundColor: colorScheme.onSurface,
     elevation: 1,
-    scrolledUnderElevation: 1,
+    scrolledUnderElevation: 0,
     shadowColor: const Color.fromRGBO(0, 0, 0, 0.06),
     surfaceTintColor: Colors.transparent,
     centerTitle: false,

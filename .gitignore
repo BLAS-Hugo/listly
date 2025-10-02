@@ -54,3 +54,4 @@ CLAUDE.md
 
 **/*.g.dart
 **/*.freezed.dart
+coverage/lcov.info

@@ -32,10 +32,7 @@ void main() {
       });
 
       test('has correct scaffold background color', () {
-        expect(
-          theme.scaffoldBackgroundColor,
-          equals(lightColorScheme.surface),
-        );
+        expect(theme.scaffoldBackgroundColor, equals(lightColorScheme.surface));
       });
 
       test('has non-null text theme', () {
@@ -59,7 +56,7 @@ void main() {
           theme.appBarTheme.backgroundColor,
           equals(lightColorScheme.surface),
         );
-        expect(theme.appBarTheme.elevation, equals(0));
+        expect(theme.appBarTheme.elevation, equals(1));
         expect(theme.appBarTheme.scrolledUnderElevation, equals(0));
         expect(theme.appBarTheme.centerTitle, isFalse);
       });
@@ -85,18 +82,12 @@ void main() {
 
       test('has chip theme configured', () {
         expect(theme.chipTheme, isNotNull);
-        expect(
-          theme.chipTheme.backgroundColor,
-          equals(AppPalette.light.muted),
-        );
+        expect(theme.chipTheme.backgroundColor, equals(AppPalette.light.muted));
       });
 
       test('has divider theme configured', () {
         expect(theme.dividerTheme, isNotNull);
-        expect(
-          theme.dividerTheme.color,
-          equals(AppPalette.light.borderSubtle),
-        );
+        expect(theme.dividerTheme.color, equals(AppPalette.light.borderSubtle));
         expect(theme.dividerTheme.thickness, equals(1));
       });
 
@@ -150,10 +141,7 @@ void main() {
       });
 
       test('has correct scaffold background color', () {
-        expect(
-          theme.scaffoldBackgroundColor,
-          equals(darkColorScheme.surface),
-        );
+        expect(theme.scaffoldBackgroundColor, equals(darkColorScheme.surface));
       });
 
       test('has non-null text theme', () {
@@ -177,7 +165,7 @@ void main() {
           theme.appBarTheme.backgroundColor,
           equals(darkColorScheme.surface),
         );
-        expect(theme.appBarTheme.elevation, equals(0));
+        expect(theme.appBarTheme.elevation, equals(1));
         expect(theme.appBarTheme.scrolledUnderElevation, equals(0));
         expect(theme.appBarTheme.centerTitle, isFalse);
       });
@@ -203,27 +191,18 @@ void main() {
 
       test('has chip theme configured', () {
         expect(theme.chipTheme, isNotNull);
-        expect(
-          theme.chipTheme.backgroundColor,
-          equals(AppPalette.dark.muted),
-        );
+        expect(theme.chipTheme.backgroundColor, equals(AppPalette.dark.muted));
       });
 
       test('has divider theme configured', () {
         expect(theme.dividerTheme, isNotNull);
-        expect(
-          theme.dividerTheme.color,
-          equals(AppPalette.dark.borderSubtle),
-        );
+        expect(theme.dividerTheme.color, equals(AppPalette.dark.borderSubtle));
         expect(theme.dividerTheme.thickness, equals(1));
       });
 
       test('has icon theme configured', () {
         expect(theme.iconTheme, isNotNull);
-        expect(
-          theme.iconTheme.color,
-          equals(darkColorScheme.onSurfaceVariant),
-        );
+        expect(theme.iconTheme.color, equals(darkColorScheme.onSurfaceVariant));
       });
 
       test('has navigation rail theme configured', () {
@@ -247,7 +226,10 @@ void main() {
         final dark = AppTheme.dark();
 
         expect(light.colorScheme, isNot(equals(dark.colorScheme)));
-        expect(light.colorScheme.primary, isNot(equals(dark.colorScheme.primary)));
+        expect(
+          light.colorScheme.primary,
+          isNot(equals(dark.colorScheme.primary)),
+        );
       });
 
       test('both themes use Material 3', () {

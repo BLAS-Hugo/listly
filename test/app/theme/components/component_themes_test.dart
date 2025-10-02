@@ -73,7 +73,7 @@ void main() {
         expect(appBarTheme, isNotNull);
         expect(appBarTheme.backgroundColor, equals(lightColorScheme.surface));
         expect(appBarTheme.foregroundColor, equals(lightColorScheme.onSurface));
-        expect(appBarTheme.elevation, equals(0));
+        expect(appBarTheme.elevation, equals(1));
         expect(appBarTheme.scrolledUnderElevation, equals(0));
         expect(appBarTheme.centerTitle, isFalse);
       });
