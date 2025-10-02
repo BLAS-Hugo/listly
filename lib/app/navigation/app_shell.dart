@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:listly/shared/localization/app_locale.dart';
 
 class ScaffoldWithNavbar extends ConsumerWidget {
   const ScaffoldWithNavbar(this.navigationShell, {super.key});
@@ -15,7 +17,9 @@ class ScaffoldWithNavbar extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          navigationShell.currentIndex == 0 ? 'Listes' : 'Paramètres',
+          navigationShell.currentIndex == 0
+              ? AppLocale.lists.getString(context)
+              : AppLocale.settings.getString(context),
         ),
       ),
       body: navigationShell,
@@ -52,7 +56,7 @@ class ScaffoldWithNavbar extends ConsumerWidget {
                   alignment: Alignment.center,
                   child: Icon(Icons.list, color: colorScheme.primary),
                 ),
-                label: 'Listes',
+                label: AppLocale.lists.getString(context),
               ),
               NavigationDestination(
                 icon: const Icon(Icons.settings),
@@ -66,7 +70,7 @@ class ScaffoldWithNavbar extends ConsumerWidget {
                   alignment: Alignment.center,
                   child: Icon(Icons.settings, color: colorScheme.primary),
                 ),
-                label: 'Paramètres',
+                label: AppLocale.settings.getString(context),
               ),
             ],
             onDestinationSelected: _onTap,

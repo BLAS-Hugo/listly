@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:listly/app/theme/app_theme.dart';
 import 'package:listly/firebase_options.dart';
+import 'package:listly/shared/localization/localization.dart';
 import 'package:listly/shared/providers/database/database_provider.dart';
 import 'package:listly/shared/providers/navigation/navigation_provider.dart';
 import 'package:listly/shared/providers/theme/theme_provider.dart';
@@ -12,6 +14,7 @@ import 'package:sembast/sembast_io.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await appLocalization.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Initialize Sembast database
@@ -27,11 +30,33 @@ void main() async {
   );
 }
 
-class MainApp extends ConsumerWidget {
+class MainApp extends ConsumerStatefulWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends ConsumerState<MainApp> {
+  @override
+  void initState() {
+    super.initState();
+    appLocalization.init(
+      mapLocales: [
+        const MapLocale('en', US.en_US),
+        const MapLocale('fr', FR.fr_FR),
+      ],
+      initLanguageCode: 'fr',
+    );
+    appLocalization.onTranslatedLanguage = _onTranslatedLanguage;
+  }
+
+  void _onTranslatedLanguage(Locale? locale) {
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final themeMode = ref.watch(themeNotifierProvider);
     final router = ref.watch(routerProvider);
 
@@ -39,6 +64,8 @@ class MainApp extends ConsumerWidget {
         ? AppTheme.light()
         : AppTheme.dark();
     return MaterialApp.router(
+      supportedLocales: appLocalization.supportedLocales,
+      localizationsDelegates: appLocalization.localizationsDelegates,
       routerConfig: router,
       theme: theme,
       themeMode: themeMode,
