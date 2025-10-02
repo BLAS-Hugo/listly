@@ -24,6 +24,9 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Build generated classes
+        run: dart run build_runner -d
         
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source
