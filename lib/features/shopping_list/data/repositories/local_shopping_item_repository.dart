@@ -121,6 +121,32 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
   }
 
   @override
+  Stream<List<ShoppingItem>> watch() {
+    try {
+      final finder = Finder(sortOrders: [SortOrder('sortOrder', true)]);
+      return _sembastService
+          .watchQuery(_storeName, finder: finder)
+          .map(
+            (dataList) =>
+                dataList.map((data) => ShoppingItem.fromJson(data)).toList(),
+          );
+    } catch (e) {
+      throw Exception('Failed to watch shopping items: $e');
+    }
+  }
+
+  @override
+  Stream<ShoppingItem?> watchById(String id) {
+    try {
+      return _sembastService
+          .watchOne(_storeName, id)
+          .map((data) => data != null ? ShoppingItem.fromJson(data) : null);
+    } catch (e) {
+      throw Exception('Failed to watch shopping item by id: $e');
+    }
+  }
+
+  @override
   Stream<List<ShoppingItem>> watchItemsByListId(String listId) {
     try {
       final finder = Finder(
@@ -136,17 +162,6 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
           );
     } catch (e) {
       throw Exception('Failed to watch shopping items for list: $e');
-    }
-  }
-
-  @override
-  Stream<ShoppingItem?> watchById(String id) {
-    try {
-      return _sembastService
-          .watchOne(_storeName, id)
-          .map((data) => data != null ? ShoppingItem.fromJson(data) : null);
-    } catch (e) {
-      throw Exception('Failed to watch shopping item by id: $e');
     }
   }
 }

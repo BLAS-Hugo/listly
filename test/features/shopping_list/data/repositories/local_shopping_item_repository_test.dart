@@ -449,7 +449,8 @@ void main() {
         expect(capturedCall['id'], equals(minimalItem.id));
         expect(capturedCall['name'], equals(minimalItem.name));
         expect(capturedCall['description'], isNull);
-        expect(capturedCall['quantity'], isNull);
+        // Quantity has a default value of 1 in the ShoppingItem model
+        expect(capturedCall['quantity'], equals(1));
       });
 
       test('handles large quantity values', () async {
