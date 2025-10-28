@@ -4,12 +4,20 @@ import 'package:listly/features/shopping_list/domain/repositories/shopping_list_
 import 'package:listly/shared/models/shopping_list.dart';
 import 'package:sembast/sembast.dart';
 
+/// Riverpod provider for [LocalShoppingListRepository].
+///
+/// Provides a singleton instance of the repository with Sembast service injected.
 final localShoppingListRepositoryProvider = Provider(
   (ref) => LocalShoppingListRepository(
     sembastService: ref.watch(sembastServiceProvider),
   ),
 );
 
+/// Local implementation of [ShoppingListRepository] using Sembast.
+///
+/// Stores shopping lists in the 'lists' Sembast store.
+/// All operations are synchronous with local database - no network calls.
+/// Supports CRUD operations, collaboration features, and real-time data streams.
 class LocalShoppingListRepository implements ShoppingListRepository {
   final SembastService _sembastService;
   static const String _storeName = 'lists';
