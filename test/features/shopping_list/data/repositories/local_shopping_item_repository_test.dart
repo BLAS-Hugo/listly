@@ -301,33 +301,6 @@ void main() {
       });
     });
 
-    group('watch', () {
-      test('returns stream of shopping items sorted by sortOrder', () async {
-        final testItems = TestData.sampleShoppingItems;
-        final testJsonList = testItems.map((item) => item.toJson()).toList();
-
-        when(
-          mockSembastService.watchQuery('shopping_items', finder: anyNamed('finder')),
-        ).thenAnswer((_) => Stream.value(testJsonList));
-
-        final stream = repository.watch();
-
-        await expectLater(stream.take(1), emits(hasLength(testItems.length)));
-
-        verify(
-          mockSembastService.watchQuery('shopping_items', finder: anyNamed('finder')),
-        ).called(1);
-      });
-
-      test('throws exception when service fails', () {
-        when(
-          mockSembastService.watchQuery('shopping_items', finder: anyNamed('finder')),
-        ).thenThrow(Exception('Database error'));
-
-        expect(() => repository.watch(), throwsA(isA<Exception>()));
-      });
-    });
-
     group('watchById', () {
       test('returns stream of specific shopping item', () async {
         final testItem = TestData.sampleShoppingItem;

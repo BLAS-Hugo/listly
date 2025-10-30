@@ -120,20 +120,6 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
     }
   }
 
-  Stream<List<ShoppingItem>> watch() {
-    try {
-      final finder = Finder(sortOrders: [SortOrder('sortOrder')]);
-      return _sembastService
-          .watchQuery(_storeName, finder: finder)
-          .map(
-            (dataList) =>
-                dataList.map((data) => ShoppingItem.fromJson(data)).toList(),
-          );
-    } catch (e) {
-      throw Exception('Failed to watch shopping items: $e');
-    }
-  }
-
   @override
   Stream<ShoppingItem?> watchById(String id) {
     try {
