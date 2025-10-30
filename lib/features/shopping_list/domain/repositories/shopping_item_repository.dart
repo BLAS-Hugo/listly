@@ -84,4 +84,3 @@ abstract class ShoppingItemRepository {
   /// Throws an exception in the stream if a critical error occurs.
   Stream<ShoppingItem?> watchById(String id);
 }
-

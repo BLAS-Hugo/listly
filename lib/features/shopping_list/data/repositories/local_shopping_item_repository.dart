@@ -46,7 +46,7 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
     try {
       final finder = Finder(
         filter: Filter.equals('listId', listId),
-        sortOrders: [SortOrder('sortOrder', true)],
+        sortOrders: [SortOrder('sortOrder')],
       );
 
       final dataList = await _sembastService.query(_storeName, finder: finder);
@@ -120,10 +120,9 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
     }
   }
 
-  @override
   Stream<List<ShoppingItem>> watch() {
     try {
-      final finder = Finder(sortOrders: [SortOrder('sortOrder', true)]);
+      final finder = Finder(sortOrders: [SortOrder('sortOrder')]);
       return _sembastService
           .watchQuery(_storeName, finder: finder)
           .map(
@@ -151,7 +150,7 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
     try {
       final finder = Finder(
         filter: Filter.equals('listId', listId),
-        sortOrders: [SortOrder('sortOrder', true)],
+        sortOrders: [SortOrder('sortOrder')],
       );
 
       return _sembastService
@@ -165,4 +164,3 @@ class LocalShoppingItemRepository implements ShoppingItemRepository {
     }
   }
 }
-
