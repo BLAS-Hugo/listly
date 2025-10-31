@@ -110,7 +110,10 @@ void main() {
         final result = await repository.getItemsByListId(listId);
 
         expect(result.length, equals(testItems.length));
-        expect(result.first.listId, equals(listId));
+        // Verify ALL items have the correct listId
+        for (final item in result) {
+          expect(item.listId, equals(listId));
+        }
         verify(
           mockSembastService.query('shopping_items', finder: anyNamed('finder')),
         ).called(1);
